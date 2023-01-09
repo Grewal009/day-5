@@ -21,6 +21,6 @@
   "browsersList": [
     "last 2 versions"
   ],
-  "main": "script.js",
+  "main": "App.js",
   "description": ""
 }
