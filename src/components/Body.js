@@ -5,7 +5,7 @@ import { useState } from "react";
 function dataFilter(searchText, restaurants){
     
     const filterData = restaurants.filter((r) =>
-    r.data.name.includes(searchText)
+    r.data.name.toLowerCase().includes(searchText.toLowerCase())
   );
 
   return filterData;
@@ -14,7 +14,7 @@ function dataFilter(searchText, restaurants){
 
 const Body = () => {
     
-    const [searchText,setSearchText] = useState("");
+    const [searchText ,setSearchText] = useState("");
     const [restaurants, setRestaurants] = useState(restaurantList);
 
 
@@ -45,7 +45,8 @@ const Body = () => {
                   console.log(restaurants);
                 }
 
-            }    >Search</button>
+            }    
+            >Search</button>
 
         </div>
 
