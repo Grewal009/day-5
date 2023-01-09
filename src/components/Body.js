@@ -3,6 +3,7 @@ import { restaurantList } from "../config";
 import { useState } from "react";
 
 function dataFilter(searchText, restaurants){
+    
     const filterData = restaurants.filter((r) =>
     r.data.name.includes(searchText)
   );
@@ -39,7 +40,7 @@ const Body = () => {
             
             <button className="search-btn" onClick={    
                 ()=>{
-                  const data = dataFilter(searchText, restaurants);
+                  const data = dataFilter(searchText, restaurantList);
                   setRestaurants(data);
                   console.log(restaurants);
                 }
