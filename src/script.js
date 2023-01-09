@@ -1,35 +1,10 @@
 import React from "react";
 import ReactDOM  from "react-dom/client";
 
+import Header  from "./components/Header.js";
+import Body from "./components/Body.js";
+import Footer from "./components/Footer.js";
 
-const Title = () => {
-    return(
-        <a href="/">
-             <img className="logo"
-             src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
-             alt="logo image"
-            />
-        </a>
-       
-        
-    );
-};
-
-const Header = () => {
-    return(
-        <div className="header">
-            <Title />
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>Services</li>
-                    <li>Contact</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    );
-};
 
 const restaurantList = [
         {
@@ -889,52 +864,6 @@ const restaurantList = [
         }
 ];
 
-const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating}) => {
-    return(
-        <div className="card">
-            
-            <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+ cloudinaryImageId}/>
-            <h2>{name}</h2>
-            <h3>{cuisines?.join(", ")}</h3>
-            <h4>{avgRating} rating</h4>
-            
-        </div>
-    );
-};
-
-const Body = () => {
-    return(
-       /* <div className="restaurent-list">
-        <RestaurantCard restaurant = {restaurantList[0]} />
-        <RestaurantCard restaurant = {restaurantList[1]}/>
-        <RestaurantCard restaurant = {restaurantList[2]}/>
-        <RestaurantCard restaurant = {restaurantList[3]}/>
-        <RestaurantCard restaurant = {restaurantList[4]}/>
-        <RestaurantCard restaurant = {restaurantList[5]}/>
-        </div>
-       */ 
-
-        //using .map() instead hard coded
-        
-       <div className="restaurent-list">
-        {
-             restaurantList.map((restaurant)=>{
-                return(
-                    <RestaurantCard {...restaurant.data} key={restaurant.data.id}/>
-                );
-            })
-        }
-
-       </div>
-
-    );
-};
-
-const Footer = () => {
-    return(
-        <h4>Footer</h4>
-    );
-};
 
 const AppLayout = () => {
     return(
